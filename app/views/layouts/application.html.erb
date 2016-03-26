@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsJspm</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-controller="<%= controller.controller_path %>" data-action="<%= controller.action_name %>">
+
+<%= yield %>
+
+  <script>
+    // !function() { System.import('app').catch(console.error.bind(console)); }();
+    System.import('welcome').then(function(m){
+      m.welcome('Someone');
+    });
+  </script>
+
+</body>
+</html>
